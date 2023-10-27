@@ -65,6 +65,16 @@ If you need to use JACK1 replace libjack-jackd2-dev by libjack-dev.
 The following command installs all the recommended dependencies for sclang except for Qt:
 
     sudo apt-get install git libasound2-dev libicu-dev libreadline6-dev libudev-dev pkg-config libncurses5-dev
+    
+Installing requirements on Fedora
+---------------------------------
+
+The following commands should install all the recommended SuperCollider dependencies on Fedora, except for Qt:
+```sh
+sudo dnf groupinstall "Development Tools"
+sudo dnf install cmake libsndfile-devel wayland-devel xorg-x11-server-Xwayland-devel pipewire-devel pipewire-jack-audio-connection-kit-devel systemd-devel fftw-devel alsa-lib-devel libatomic
+sudo dnf install emacs # if building with the sc-el backend (default)
+```
 
 Installing Qt
 -------------
@@ -81,7 +91,13 @@ If this displays version 5.7 or later, installing Qt is easy:
 
     sudo apt-get install qt5-default qt5-qmake qttools5-dev qttools5-dev-tools qtwebengine5-dev libqt5svg5-dev libqt5websockets5-dev
 
-If you are on Ubuntu 14.04 (Trusty) or 16.04 (Xenial), check the next section. Otherwise, you will have to use the official Qt installer. Sorry.
+If you are on Ubuntu, check the sections below. If these instructions don't work, you will have to use the official Qt installer.
+
+### Installing Qt on Ubuntu Bionic, Focal, or Jammy
+
+On Ubuntu 18.04 (Bionic), 20.04 (Focal), and 22.04 (Jammy) Qt5 is available in the system's package manager. The following should install the correct packages:
+
+    sudo apt-get install qtbase5-dev qt5-qmake qttools5-dev qttools5-dev-tools qtdeclarative5-dev libqt5svg5-dev libqt5websockets5-dev qtwebengine5-dev
 
 ### Installing Qt on Ubuntu Trusty or Xenial
 
@@ -100,6 +116,12 @@ On Trusty, only Qt 5.10 and below are available:
     sudo apt-get install qt510base qt510location qt510tools qt510webchannel qt510xmlpatterns qt510svg qt510webengine qt510websockets
 
 [Stephan Binner's Launchpad PPAs]: https://launchpad.net/~beineri
+
+### Installing Qt on Fedora
+
+```sh
+sudo dnf install qt5-qtbase-devel qt5-qtsvg-devel qt5-qtwebengine-devel qt5-linguist qt5-qtwebsockets-devel
+```
 
 ### Installing Qt using the official installer
 
